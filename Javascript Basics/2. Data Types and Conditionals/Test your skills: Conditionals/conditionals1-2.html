@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Conditionals: Task 1</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+    <label for="season">Select the season: </label>
+    <select id="season">
+      <option value="">--Make a choice--</option>
+      <option value="spring">Spring</option>
+      <option value="summer">Summer</option>
+      <option value="autumn">Autumn</option>
+      <option value="winter">Winter</option>
+    </select>
+
+    
+    <section class="preview"></section>
+    <p></p>
+
+  </body>
+  
+  <script>
+    const select = document.querySelector("select");
+    const para = document.querySelector("p");
+
+    select.addEventListener("change", setSeason);
+
+    // Add your code here
+    function setSeason() {
+      const choice = select.value;
+
+      if (choice === "summer") {
+        para.textContent = "It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream.";
+      } 
+      else if (choice === "winter") { 
+        para.textContent = "Brrr, it's cold!";
+      }
+      else {
+        para.textContent = "Stay home"
+      }
+    }
+
+    
+
+  </script>
+
+</html>

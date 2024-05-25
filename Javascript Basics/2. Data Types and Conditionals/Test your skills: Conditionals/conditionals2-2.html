@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Conditionals: Task 2</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+    
+    <label for="machine">Machine is: </label>
+    <select id="machine">
+        <option value="off">Inactive</option>
+        <option value="on">Active</option>
+      </select>
+
+    <section class="preview"></section>
+    <p></p>
+
+    <script>
+      const select = document.querySelector("select");
+      let para = document.querySelector("p");
+      para.textContent = "Turn on the machine";
+  
+      let score = 55;
+  
+      select.addEventListener("change", setMachine);
+  
+      function setMachine() {
+        const choice = select.value;
+  
+        if (choice === "on") {
+          para.textContent = "Machine is active";
+          if (score >= 0 && score <= 19) {
+              response = "That was a terrible score — total fail!"
+          } 
+          else if (score >= 20 && score <= 39) {
+              response = "You know some things, but it\'s a pretty bad score. Needs improvement.";
+          } 
+          else if (score >= 40 && score <= 69) {
+              response = "You did a passable job, not bad!";   
+          }
+          else if (score >= 70 && score <= 89) {
+              response = "That\'s a great score, you really know your stuff."; 
+          }
+          else if (score >= 90 && score <= 100) {
+              response = "What an amazing score! Did you cheat? Are you for real?";
+          }
+          else {
+              response = "This is not possible, an error has occurred.";
+          }
+          let para1 = document.createElement('p');
+            para1.textContent = `Your score is ${score}. ${response}`;
+            document.querySelector(".preview").appendChild(para1);
+        } else {
+          para.textContent = "Turn on the machine";
+          para1.style.display = "none";
+        }
+
+      }
+      
+    </script>
+
+  </body>
+
+
+</html>
