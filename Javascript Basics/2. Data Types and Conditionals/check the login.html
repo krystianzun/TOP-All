@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Check The Login</title>
+  <script src="javascript.js"></script>
+</head>
+<body>
+  <script>
+    // Your JavaScript goes here!
+    let userName = prompt("Who's there?", "");
+
+    if (userName === 'Admin') {
+      let adminPassword = prompt ("Password?", "")
+
+      if (adminPassword === 'theMaster') {
+        alert("Welcome!");
+      } 
+      else if (adminPassword === '' || adminPassword === null) {
+        alert ("Cancelled!");
+      } 
+      else {
+        alert("Wrong password!");
+      }
+    } 
+
+    else if (userName === '' || userName === null) {
+      alert("Cancelled!");
+    } 
+
+    else {
+      alert("I don't know you!");
+    }
+
+  </script>
+</body>
+</html>
